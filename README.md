@@ -50,53 +50,86 @@ Luego de crear las tres tareas, si gustas, puedes cambiar el nombre del pipeline
 
 ![image](https://github.com/user-attachments/assets/9fc5f8f6-632e-4896-9d94-e56432e8678c)
 
-![image]()
+Luego, ejecutamos el pipeline.
 
-![image]()
+Si queremos ver el estado de ejecución, podemos hacer click en Runs.
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/8b4ac865-dd39-4750-84ba-f08748283e4b)
 
-![image]()
+También, podemos hacer click en la fecha de start time para ver la gráfica.
 
-![image]()
+![image](https://github.com/user-attachments/assets/7417319f-8db2-432c-8314-ab8a0c74d2cc)
 
-![image]()
+Tambien, puedes hacer click en uno de ellos para ver la ejecución del código.
 
-![image]()
+![image](https://github.com/user-attachments/assets/f525105a-24d4-4e7a-911f-85af4806d624)
 
-![image]()
+![image](https://github.com/user-attachments/assets/51cf7859-3f62-474e-a95a-372a3c71910b)
 
-![image]()
+![image](https://github.com/user-attachments/assets/d366859e-4619-4a5a-bc07-1de85d977912)
 
-![image]()
+Ahora, editaremos la presente tarea, para minimizar el uso de recursos al crear otro trabajo.
 
-![image]()
+Entonces haremos click en task_02 y task_03 para eliminarlos.
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/f9bee1e6-123d-4221-90af-c5c09f083062)
 
-![image]()
+![image](https://github.com/user-attachments/assets/bbb28a3c-18ce-419a-8eb9-c0d34a3be222)
 
-![image]()
+Ahora, hacemos click +Add Task y,  hacemos click en if/else condition
 
-![image]()
+![image](https://github.com/user-attachments/assets/610ba101-c3e2-4f58-b99b-cd0f378d3321)
 
-![image]()
+![image](https://github.com/user-attachments/assets/b562ad28-1446-49e3-9bad-3f4649e0e488)
 
-![image]()
+![image](https://github.com/user-attachments/assets/13a17125-3d30-48f0-aa74-a09966e35474)
 
-![image]()
+![image](https://github.com/user-attachments/assets/2c3fac4e-e17b-4765-a04b-dde5537412e3)
 
-![image]()
+![image](https://github.com/user-attachments/assets/3997d27f-7951-444f-9ec1-c2b4444fa1a9)
 
-![image]()
+![image](https://github.com/user-attachments/assets/d9de233f-b35b-4aa3-8b56-61f303fac8db)
 
-![image]()
+Ahora, agregare tarea y seleccionare notebook.
 
-![image]()
+![image](https://github.com/user-attachments/assets/d454783a-bf3d-42c7-97bf-2813d520fa4a)
+
+![image](https://github.com/user-attachments/assets/87903918-e920-42db-b213-085ad7d1cfb3)
+
+Indicare que es el task_02 y marcare la ruta o path.
+
+![image](https://github.com/user-attachments/assets/bde92650-d40d-4d59-8d07-d6b5355bae7d)
+
+![image](https://github.com/user-attachments/assets/4eed3233-0e01-4c6f-b906-9edb05818c21)
+
+Y damos click en crear tarea.
+
+Luego, hacemos agregar tarea y hacemos el mismo procedimiento para el task_03 y solo cambiamos la dependencia por IfWeekend(false).
+
+
+![image](https://github.com/user-attachments/assets/904eea16-e611-47d7-8c5d-275f283d61d8)
+
+![image](https://github.com/user-attachments/assets/1065053c-73bb-47f5-9be7-6235479a063d)
+
+Hago click en crear tarea y, luego, ejecutamos el pipeline.
+
+![image](https://github.com/user-attachments/assets/acaee8b0-9493-4a48-be44-59f27ffb78a6)
+
+![image](https://github.com/user-attachments/assets/3c997aee-789b-4e50-88f5-e7d9d9432b52)
+
+Ahora iremos a job & pipeline y crearemos un nuevo trabajo
+
+![image](https://github.com/user-attachments/assets/ad697179-affe-4c8b-9807-4e2013a7d6cd)
+
+Luego, en la ventana emergente, hacemos click en +Add another task type  y, seleccionamos Notebook.
+
+![image](https://github.com/user-attachments/assets/e430eb3b-ecae-473d-867a-06bc9a1785b2)
+
+![image](https://github.com/user-attachments/assets/edffcf34-6625-43ef-b311-dd76955c2136)
+
+Ahora, seleccionamos la ruta en path
 
 ![image]()
 
