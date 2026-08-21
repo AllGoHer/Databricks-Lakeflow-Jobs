@@ -302,359 +302,389 @@ ________________________________________________________________________________
 
 Ahora crearé un nuevo catálogo llamado db_jobs.
 
-![image]()
+![image](https://github.com/user-attachments/assets/5563175e-3281-4de3-92c6-aeb918f3ce38)
 
-![image]()
+Ahora, me dirijo workspace y crearé un archivo.
 
-![image]()
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/c42ffdbf-2715-42cb-abdc-71c50c9f8063)
 
-![image]()
+Código:
 
-![image]()
+        CREATE TABLE db_jobs.default.orders
+        (
+            order_id INT,
+            order_date DATE,
+            customer_id INT,
+            order_status STRING,
+            total_price DECIMAL(10,2)
+        );
 
-![image]()
+        INSERT INTO db_jobs.default.orders
+        VALUES
+            (1, '2022-01-01', 101, 'shipped', 50.00),
+            (2, '2022-01-02', 102, 'shipped', 75.00),
+            (3, '2022-01-03', 103, 'processing', 30.00),
+            (4, '2022-01-04', 104, 'shipped', 100.00),
+            (5, '2022-01-05', 105, 'shipped', 60.00)
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/a9492541-bd52-4cfd-b9bf-8abbb7b5b0ec)
 
-![image]()
+Ahora, hacemos la siguiente consulta, el cual activará una caja de consultas.
 
-![image]()
+Código:
 
-![image]()
+        SELECT 
+            *
+        FROM
+            db_jobs.default.orders
+        WHERE
+            order_id = :var_id
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/c3f4cc6c-6a49-4194-9148-d4376f0be14c)
 
-![image]()
+Hacemos ahora un duplicado de la pestaña y, nos vamos a Jobs &pipelines y, editaremos la tarea anterior para ahorrar recursos.
 
-![image]()
+![image](https://github.com/user-attachments/assets/1d95b687-db9a-4f82-b84b-b661854eaa61)
 
-![image]()
+Eliminamos las tareas Task-Y y Task-Z y, editamos el Notebook-X.
 
-![image]()
+![image](https://github.com/user-attachments/assets/5c8f0252-61c7-494d-b375-90e5295a8c32)
 
-![image]()
+![image](https://github.com/user-attachments/assets/dea44a2c-11e0-4aac-a358-fec34652f7be)
 
-![image]()
+Regresamos a la pestaña de Jobs & pipelines y, creamos una consulta sql.
 
-![image]()
+![image](https://github.com/user-attachments/assets/7327f3cf-0188-4a91-953c-9970a18b06e4)
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/cd0a1430-28df-407a-b28b-77f391609cb4)
 
-![image]()
+![image](https://github.com/user-attachments/assets/f6f604bf-1770-4989-a8a5-9f09751444f7)
 
-![image]()
+![image](https://github.com/user-attachments/assets/aba327f6-20d1-4558-83db-5cc7786e88c2)
 
-![image]()
+![image](https://github.com/user-attachments/assets/3a0bdd0a-3d6b-49e0-928a-587c4f283af8)
 
-![image]()
+Finalmente, damos click en create task.
 
-![image]()
+Ahora, creamos un nuevo cuaderno.
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/717b31da-ff34-4efb-a21e-b4284a22481f)
 
-![image]()
+![image](https://github.com/user-attachments/assets/fa376072-489e-42fd-a280-c20349da400c)
 
-![image]()
+Código:
 
-![image]()
+        dbutils.widgets.text("sql_output", "")
+ 
+El cual genera la siguiente caja.
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/bd9ff26a-c466-4c91-aab7-6665566ae61f)
 
-![image]()
+Agregaremos una nueva tarea.
 
-![image]()
+![image](https://github.com/user-attachments/assets/39547e3f-bca9-4119-bb09-389798751dc6)
 
-![image]()
+![image](https://github.com/user-attachments/assets/6cf8a7d8-a390-4606-ae22-e90794e8599f)
 
-![image]()
+Ahora, seleccionamos la ruta.
 
-![image]()
+![image](https://github.com/user-attachments/assets/d6339cbb-bd6a-4a5b-bb89-e69ad45536af)
 
-![image]()
 
-![image]()
+Luego, en parámetros pondremos en key: SQL_Output y clave: {{tsk.SQL_Query.output.rows}}
 
-![image]()
+![image](https://github.com/user-attachments/assets/3a0ccb19-ab54-40ce-9453-0985f195daf9)
 
-![image]()
+Ahora, creamos la tarea y, ejecutamos todo el trabajo.
 
-![image]()
+![image](https://github.com/user-attachments/assets/1d5d1e5c-a917-4bf0-b0dd-e143b58481e2)
 
-![image]()
+![image](https://github.com/user-attachments/assets/e6fb3b7f-b18d-4fac-9e18-024a31b1b9a7)
 
-![image]()
+![image](https://github.com/user-attachments/assets/bf081c4f-da4b-453e-9040-0e4ddf9a3674)
 
-![image]()
+![image](https://github.com/user-attachments/assets/b98bdabd-f97a-4d27-a9b8-0ded2e9e1468)
 
-![image]()
+![image](https://github.com/user-attachments/assets/a118333b-37a6-4380-85a6-cf4ad1d547df)
 
-![image]()
+![image](https://github.com/user-attachments/assets/b21708f6-afb4-4b5a-b541-0132525c7b6c)
 
-![image]()
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-![image]()
+### AVANCE
 
-![image]()
+Crearemos una carpeta llamada Advanced y dentro un cuaderno llamado Ingestion.
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/c7d2c154-23cb-4c30-b381-fcc6b2f65c72)
 
-![image]()
+Ahora para cargar datos, nos vamos a catalog – db_jobs
 
-![image]()
+![image](https://github.com/user-attachments/assets/18fa559a-e4b4-4709-97fa-0b0e265a9c67)
 
-![image]()
+Creamos un volumen
 
-![image]()
+![image](https://github.com/user-attachments/assets/b964273d-1765-43df-ba96-d23717d2b7c0)
 
-![image]()
+![image](https://github.com/user-attachments/assets/16e125e8-4f30-4968-a67c-496e662ffe34)
 
-![image]()
+Ahora cargaremos la data a volúmenes (datos parquet en el repositorio).
 
-![image]()
+![image](https://github.com/user-attachments/assets/fb3e3909-5657-4bec-8ff3-f375eccc4001)
 
-![image]()
+![image](https://github.com/user-attachments/assets/98bf9673-dad1-4ed8-a74a-521dd2f908d8)
 
-![image]()
+Ahora crearemos un duplicado de la pestaña de trabajo.
 
-![image]()
+Nos vamos a workspace –> Databricks_jobs –> Advanced –> Ingestion 
 
-![image]()
+Pasamos el siguiente código.
 
-![image]()
+Código:
 
-![image]()
+        dbutils.widgets.text("file_name", "")
+        file_name = dbutils.widgets.get("file_name")
 
-![image]()
 
-![image]()
+y luego, le damos play.
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/ce65f420-07fc-470c-9980-4bc9577eaa6c)
 
-![image]()
+Código:
 
-![image]()
+        df = spark.read.format("parquet")\
+                    .load(f"/Volumes/db_jobs/default/raw_data/{file_name}.parquet")
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/2279b1d1-c344-4fb6-bda7-80568760496f)
 
-![image]()
+Luego, damos play
 
-![image]()
+Código:
 
-![image]()
+        df.write.format("delta")\
+            .mode("overwrite")\
+            .save(f"/Volumes/db_jobs/default/raw_data/sink/{file_name}")
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/27f54373-e818-4388-a8b8-0e7afd0f998b)
 
-![image]()
+Ahora, crearemos otro cuaderno llamado array.
 
-![image]()
+Pasamos el siguiente código.
 
-![image]()
+Código:
 
-![image]()
+        file_names = [
 
-![image]()
+            {"file_name" : "orders"},
+            {"file_name" : "products"},
+            {"file_name" : "regions"}
+    
+        ]
 
-![image]()
+Luego, le damos play.
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/228de53d-d3ba-4d6a-bc64-3cb492b9ccf6)
 
-![image]()
+Código:
 
-![image]()
+dbutils.jobs.taskValues.set(key = "file_names", value = file_names)
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/15b9b818-fb4c-476c-a00e-5634196bf1f5)
 
-![image]()
+Ahora, vamos a Job & Pipelines y creamos un nuevo trabajo.
 
-![image]()
+![image](https://github.com/user-attachments/assets/14fae0a7-462b-4c78-8d7c-72133e7d834e)
 
-![image]()
+Creamos un Notebook
 
-![image]()
+![image](https://github.com/user-attachments/assets/f6a80589-335d-4175-aeb7-4404f628efa0)
 
-![image]()
+![image](https://github.com/user-attachments/assets/8f27cae6-f3ea-483b-85a1-4fce51b5ffca)
 
-![image]()
+Le damos a guardar tarea y, luego crearemos un bucle.
 
-![image]()
+![image](https://github.com/user-attachments/assets/51796b96-42f6-4f51-b7de-d0d9b0b7b1ee)
 
-![image]()
+![image](https://github.com/user-attachments/assets/3d83e106-4776-498f-8bd2-ae22690e7daf)
 
-![image]()
+![image](https://github.com/user-attachments/assets/6afbab59-6340-4b89-b1d4-f185b1b462aa)
 
-![image]()
+![image](https://github.com/user-attachments/assets/99d019e3-3815-4b8b-99f0-b51a8735a626)
 
-![image]()
+Luego, damos click en Add a task to loop over.
 
-![image]()
+Ahora, en la nueva ventana emergente, cambiaremos el task como Ingestion y direccionamos su path.
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/39fd0003-90e6-4b2d-a9c8-e4dd5a6635c3)
 
-![image]()
+![image](https://github.com/user-attachments/assets/3f88c5bc-b3bf-41f9-af35-54e8b4ea624d)
 
-![image]()
+Luego, introducimos los siguientes parámetros y, le damos click en create task.
 
-![image]()
+![image](https://github.com/user-attachments/assets/7df344e1-19e5-429e-ac33-f4e4fa6a6c0a)
 
-![image]()
+![image](https://github.com/user-attachments/assets/cc0237ac-792b-4b10-b3de-b0c0033ecb9f)
 
-![image]()
+Le damos en ejecutar (Run Now).
 
-![image]()
+![image](https://github.com/user-attachments/assets/31a7cc6e-2cfd-47ed-8e7b-0bc3bb15a7b2)
 
-![image]()
+![image](https://github.com/user-attachments/assets/99cf70f0-a47d-49ee-8697-a45e9e762191)
 
-![image]()
+![image](https://github.com/user-attachments/assets/ba36f496-6500-4d58-80f3-8729ecd06d78)
 
-![image]()
+![image](https://github.com/user-attachments/assets/a63b1b57-7609-4bb9-b947-257016d891fb)
 
-![image]()
+Asi mismo, ya se puede ver en la carpeta sink de Catalog.
 
-![image]()
+![image](https://github.com/user-attachments/assets/3f4bf333-66d9-43b4-a3f2-cd7876535e18)
 
-![image]()
+Ahora, vamos a workspace y, creamos un query llamado mapping_table.
 
-![image]()
+![image](https://github.com/user-attachments/assets/7eebfe7d-a0c5-4409-9393-36dbd953092d)
 
-![image]()
+![image](https://github.com/user-attachments/assets/6e2e6067-096c-4aab-af62-956c675547bb)
 
-![image]()
+Pasamos la siguiente consulta.
 
-![image]()
+Código:
 
-![image]()
+        CREATE TABLE db_jobs.default.mapping 
+        (
+           file_name STRING 
+        )
 
-![image]()
+        INSERT INTO db_jobs.default.mapping 
+        VALUES 
+        ('orders'),
+        ('regions'),
+        ('products')
 
-![image]()
 
-![image]()
+Y ejecutamos (Run all)
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/d92024a2-3814-4e0e-ad9f-22eb352f543c)
 
-![image]()
+Para confirmar la creación, haré lo siguiente.
 
-![image]()
+Código:
 
-![image]()
+        SELECT * FROM mapping;
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/a7d4f4c8-3567-4146-995b-ccefa466582e)
 
-![image]()
+Ahora, guardamos el query y, regresamos a Jobs y, crearemos una nueva tarea.
 
-![image]()
+![image](https://github.com/user-attachments/assets/6de85357-8d58-4401-845b-7521ac8286b3)
 
-![image]()
+![image](https://github.com/user-attachments/assets/0f00daca-1603-4109-b9a8-d1ac7dac8bd7)
 
-![image]()
+Y le damos click en crear tarea.
 
-![image]()
+Ahora, en el grafico hacemos click en Dinamic_Ingestion y cambiamos algunos datos como la concurrencia, el Imput y la dependencia.
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/a2003c7b-be58-4337-bc5c-0805567d0f61)
 
-![image]()
+Luego, guardamos la tarea y, eliminamos el Array del gráfico.
 
-![image]()
+![image](https://github.com/user-attachments/assets/fd900eb6-b191-479b-8c9c-f367ed56cb0c)
 
-![image]()
+![image](https://github.com/user-attachments/assets/4ba1ac24-9fdc-49a1-b872-3e54964cb30e)
 
-![image]()
+Ahora en el archivo Ingestion hacemos un pequeño cambio y, crearemos la carpeta sinkSQL para guardar los datos.
 
-![image]()
+![image](https://github.com/user-attachments/assets/ca2b7bcc-8977-44aa-9c03-7ebcf7b09800)
 
-![image]()
+![image](https://github.com/user-attachments/assets/100eb380-6a7d-4dbc-87fa-764a90607210)
 
-![image]()
+Ahora sí, volvemos al Job y ejecutamos el trabajo (Run now).
 
-![image]()
+![image](https://github.com/user-attachments/assets/8cf6c17d-c900-4f29-9149-1fa63300701d)
 
-![image]()
+![image](https://github.com/user-attachments/assets/930bb196-a2b6-4119-8193-d1efbc021519)
 
-![image]()
+![image](https://github.com/user-attachments/assets/337caed2-de77-4bc1-a526-93a0bcfb164b)
 
-![image]()
+Ahora, comprobamos en catalog si esta la carpeta SinkSQL.
 
-![image]()
+![image](https://github.com/user-attachments/assets/b7bdd7cd-d53b-41d6-a3b5-78ffd2be7140)
 
-![image]()
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________
+### ALERTAS
 
-![image]()
+Ahora, aprenderemos a crear alertas.
 
-![image]()
+Vamos a la cinta lateral izquierda de Databricks y, hacemos click en Alerts.
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/759f901b-3425-4fd2-9a19-def351bd7cf0)
 
-![image]()
+Luego, damos click en crear alerta.
 
-![image]()
+![image](https://github.com/user-attachments/assets/34f3aecc-a546-42ad-9337-bfe54f2e3fe6)
 
-![image]()
+En el área de SQL pasamos el siguiente código.
 
-![image]()
+Código:
 
-![image]()
+        SELECT * FROM db_jobs.default.orders
+ 
 
-![image]()
+Y ejecutamos.
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/5dde8b1d-5bc5-4a6c-b413-d732af606de6)
 
-![image]()
+Luego, hacemos la siguiente consulta.
 
-![image]()
+Código:
 
-![image]()
+        SELECT sum(total_price) as total_revenue FROM db_jobs.default.orders
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/915fcad8-28cf-436c-b6f8-ee0664d3bf0b)
 
-![image]()
+Ahora, pondremos las condiciones y restricciones de la alerta.
 
-![image]()
+Por ejemplo: cuando el monto total sea mayor o igual a 315.00
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/2a05db85-6e6e-4159-bbfc-009747cc0596)
 
-![image]()
+Luego, hacemos click en View alert para ajustar el horario o frecuencia de la alerta.
 
-![image]()
+![image](https://github.com/user-attachments/assets/e3628e24-bc0d-4891-bd6a-0027a8780914)
+
+Ahora hacemos click en Schedule 
+
+![image](https://github.com/user-attachments/assets/c5e82ff5-caef-4fe1-af15-017ffd1a0414)
+
+Luego de programarlo, le damos click en guardar y, vuelves a alerts y seleccionas crear.
+Listooo!!!
+
+Luego tendrás que activar el trabajo (job) todos los días manualmente.
+
+
+![image](https://github.com/user-attachments/assets/adb5c25b-0408-4308-b6d4-93d1cb87fc1d)
+
+![image](https://github.com/user-attachments/assets/380e5800-0258-403f-bda6-ad069651c395)
+
+![image](https://github.com/user-attachments/assets/a124d7a1-ad48-4a2e-b40f-d55218e02f32)
+
 
