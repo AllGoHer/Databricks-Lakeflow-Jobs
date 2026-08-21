@@ -229,7 +229,7 @@ Esto hará que tu código sea modular y, se generará el siguiente recuadro.
 
 Código:
 
-       dbutils.widgets.get("para1")
+        dbutils.widgets.get("para1")
 
 
 ![image](https://github.com/user-attachments/assets/87f9acc1-f104-4ca3-8956-f36fbb80707f)
@@ -380,7 +380,7 @@ Ahora, creamos un nuevo cuaderno.
 
 Código:
 
-        dbutils.widgets.text("sql_output", "")
+         dbutils.widgets.text("sql_output", "")
  
 El cual genera la siguiente caja.
 
@@ -498,7 +498,7 @@ Luego, le damos play.
 
 Código:
 
-dbutils.jobs.taskValues.set(key = "file_names", value = file_names)
+         dbutils.jobs.taskValues.set(key = "file_names", value = file_names)
 
 
 ![image](https://github.com/user-attachments/assets/15b9b818-fb4c-476c-a00e-5634196bf1f5)
