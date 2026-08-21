@@ -131,81 +131,176 @@ Luego, en la ventana emergente, hacemos click en +Add another task type  y, sele
 
 Ahora, seleccionamos la ruta en path
 
-![image]()
+![image](https://github.com/user-attachments/assets/92c45b98-714a-42a5-a0c1-5e6da58009c6)
 
-![image]()
+Finalmente hacemos click en crear tarea.
 
-![image]()
+Ahora, hacemos click en agregar tarea y seleccionamos For Each.
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/1130b732-0de5-4574-9304-d3cc84c8d9d2)
 
-![image]()
+![image](https://github.com/user-attachments/assets/e2ec5cb2-65ea-4ee4-9f0f-22a5fa3f916b)
 
-![image]()
+![image](https://github.com/user-attachments/assets/30e469a8-90a4-4ddd-b32d-1d3b63bd5d32)
 
-![image]()
+Le asignamos un nombre y un input y, luego, damos click en Add a task to loop over.
 
-![image]()
+![image](https://github.com/user-attachments/assets/df7e65f2-b6ff-4176-89bb-70b72e01fdc8)
 
-![image]()
+![image](https://github.com/user-attachments/assets/d24181ed-b914-428d-9b5c-796499901218)
 
-![image]()
+![image](https://github.com/user-attachments/assets/a2a1a07b-0ed8-474e-9e68-a5c4749e5b62)
 
-![image]()
+Luego hago click en crear tarea.
 
-![image]()
+![image](https://github.com/user-attachments/assets/0b9ecdd6-7366-4af9-9005-47ff96c9812a)
 
-![image]()
+Luego borramos el primer loop por que ya no es necesario.
 
-![image]()
+![image](https://github.com/user-attachments/assets/8d1158c3-2cdc-4b5a-8b87-9c938580821e)
 
-![image]()
+Y luego ejecutamos (Run Now).
 
-![image]()
+![image](https://github.com/user-attachments/assets/6bd27e54-d984-4077-bb43-7ad41654d468)
 
-![image]()
+![image](https://github.com/user-attachments/assets/25f706d1-0baf-4a7a-b502-325b60a6e5d6)
 
-![image]()
+![image](https://github.com/user-attachments/assets/b3e8119b-309d-4e37-8724-99306ff76f93)
 
-![image]()
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________
+### VALORES DINAMICOS.
 
-![image]()
+Regresamos a workspace y creamos una carpeta llamada Intermediate.
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/e77a9a46-db6d-47c6-814b-955f25d1eb7c)
 
-![image]()
+Ahora, crearé un cuaderno notebook X
 
-![image]()
+Y pasaré el siguiente código.
 
-![image]()
 
-![image]()
+Código:
 
-![image]()
+        df = spark.createDataFrame([("James", "Sales", 3000), ("Michael", "Sales", 4600), ("Robert", "Sales", 4100)], ["name", "department", "salary"])
+        display(df)
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/0778b76d-7dab-4ef9-9370-60cda461d75e)
 
-![image]()
+Ahora, hare un tipo de monitorio para ver cuantos datos estoy procesando diariamente.
 
-![image]()
+Código:
 
-![image]()
+        display(df.count())
 
-![image]()
 
-![image]()
+![image](https://github.com/user-attachments/assets/dbbb09f2-b4a2-4f4f-a266-6057560df48e)
 
-![image]()
+Código:
 
-![image]()
+        total_records = df.count()
+        total_records
 
-![image]()
+
+![image](https://github.com/user-attachments/assets/717c7cd0-7f59-480d-8a6b-b53e71ff76cd)
+
+
+Código:
+
+        dbutils.jobs.taskValues.set(key="total_records", value=total_records)
+
+
+![image](https://github.com/user-attachments/assets/b4e39c52-ea6d-4b3d-bf44-ca4f6266b2e1)
+
+Ahora creamos otro cuaderno llamado notebook-Y
+
+Para crear un parámetro en Databricks empleré el siguiente código.
+
+Código:
+
+        dbutils.widgets.text("para1", “”)
+
+Esto hará que tu código sea modular y, se generará el siguiente recuadro.
+
+
+![image](https://github.com/user-attachments/assets/e3ee17a1-93f1-45ce-8ea3-77d390444fe7)
+
+Código:
+
+       dbutils.widgets.get("para1")
+
+
+![image](https://github.com/user-attachments/assets/87f9acc1-f104-4ca3-8956-f36fbb80707f)
+
+Ahora que ya sabemos como funciona, transformaremos el proyecto de la siguiente manera.
+
+![image](https://github.com/user-attachments/assets/767a1b3a-ce85-4835-889d-8d829caade82)
+
+Ahora crearé un duplicado de este trabajo para ver el proceso, así es que, vamos a Job & Pipeline y, creamos un trabajo.
+
+![image](https://github.com/user-attachments/assets/63cc3ec7-3bbe-41f7-b9e7-3d9d46090e80)
+
+Hare click en +Add another task type y añadiré un cuaderno.
+
+![image](https://github.com/user-attachments/assets/6999fb1e-87a9-4985-b30c-e7b8f14aca37)
+
+
+![image](https://github.com/user-attachments/assets/3d11407f-dcdf-4d47-ad8a-93224ce57a60)
+
+Crearé una tarea y le asignaré el nombre de task-x
+
+![image](https://github.com/user-attachments/assets/8df06b4a-96e1-453c-ac35-b0c08e2c3b03)
+
+Ahora, asignaremos la ruta (path)
+
+![image](https://github.com/user-attachments/assets/cdbc014e-c622-43af-9eb1-37281f109944)
+
+![image](https://github.com/user-attachments/assets/ea06917d-9888-412e-9aa9-49c9c46e55b4)
+
+![image](https://github.com/user-attachments/assets/9c49e26c-7aff-4546-9114-d62d6a3737ec)
+
+Y finalmente damos click create task.
+
+Luego creamos otra tarea llamada Task-Y.
+
+
+![image](https://github.com/user-attachments/assets/679ea6fd-a3a0-4b73-b975-7757a6e3a26d)
+
+Pero esta vez agregaremos un parámetro, donde la clave será records_processed (del notebook-Y anterior) y el valor será total_records.
+
+![image](https://github.com/user-attachments/assets/a61b90ce-47a0-43ba-9d4b-721e004dade0)
+
+Finalmente, haré click en crear tarea.
+
+![image](https://github.com/user-attachments/assets/93aceff8-00ca-4b55-9cbb-c43bf0540577)
+
+Ahora, crearé otra tarea llamada Task-Z con dependencia en X.
+
+![image](https://github.com/user-attachments/assets/653abb24-f49e-4d65-b0d9-326dcd7118a6)
+
+![image](https://github.com/user-attachments/assets/170a772a-4d69-48cb-b882-afe189aa4b2c)
+
+Luego, hago click en crear tarea y, por último, volvemos al notebook-Z y asignamos el nombre de la tarea faltante “Task-X”.
+
+![image](https://github.com/user-attachments/assets/6c49be6d-f754-48d4-b3fa-4a08483d95e0)
+
+Y ejecuto todo el pipeline.
+
+![image](https://github.com/user-attachments/assets/5a3fe169-9803-48b6-899a-277ff2da1db4)
+
+![image](https://github.com/user-attachments/assets/9310d008-4a35-4510-bb8d-094664cdbc65)
+
+![image](https://github.com/user-attachments/assets/06e1be6d-44ed-4ddf-9ad0-862960cb554a)
+
+![image](https://github.com/user-attachments/assets/26664c51-679e-43cd-9ecb-0a05d2543558)
+
+![image](https://github.com/user-attachments/assets/090e3482-df3f-49fa-9319-2fde2f81bda2)
+
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Ahora crearé un nuevo catálogo llamado db_jobs.
 
 ![image]()
 
